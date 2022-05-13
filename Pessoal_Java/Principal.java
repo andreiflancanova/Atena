@@ -14,6 +14,7 @@ public class Principal {
 		}
 	}*/
 	
+	
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		Aluno[] aluno = new Aluno[40]; 	
@@ -38,47 +39,69 @@ public class Principal {
 			//todo menu.
 			op = leia.nextInt();
 			
-			
-			if(op == 1) { //Cadastrar aluno.x
-				String nome;
-				String RA = String.valueOf(registro);
-				System.out.println("Insira o nome do Aluno: ");
-				nome = leia.next();
-				
-				
-				aluno[contAluno] = new Aluno(nome,RA);
-				/*aluno[0] = new Aluno("Gabi","101");
-				aluno[1] = new Aluno("Joao","102");
-				aluno[2] = new Aluno("Cristiano","103");*/
-				
-				contAluno++;
-				registro++;
-				//contAluno = 2;
-			}
-			
-			if(op == 2) { 
-				String identificacao;
-				String pesquisa;
-				System.out.println("Insira o Nome do Aluno ou RA.");
-				identificacao = leia.next();
-				
-				//pesquisa por nome
-				for(int i=0; i<contAluno; i++) {
-					pesquisa = aluno[i].pesquisaNome();
+			switch(op){
+				case 1://Cadastrar aluno
+					String nome;
+					String RA = String.valueOf(registro);
+					System.out.println("Insira o nome do Aluno: ");
+					nome = leia.next();
 					
-					if (identificacao.equals(pesquisa)){
-						aluno[i].imprimirPesquisa();
-					}
-				}
-				
-				//pesquisa por RA.
-				for(int i=0; i<contAluno; i++) {
-					pesquisa = aluno[i].pesquisaRA();
+					aluno[contAluno] = new Aluno(nome,RA);
+					/*aluno[0] = new Aluno("Gabi","101");
+					aluno[1] = new Aluno("Joao","102");
+					aluno[2] = new Aluno("Cristiano","103");*/
 					
-					if (identificacao.equals(pesquisa)){
-						aluno[i].imprimirPesquisa();
+					contAluno++;
+					registro++;
+					//contAluno = 2;
+					
+					break;
+					
+				case 2://Pesquisar Aluno
+					String identificacao;
+					String pesquisa;
+					System.out.println("Insira o Nome do Aluno ou RA.");
+					identificacao = leia.next();
+					
+					//pesquisa por nome
+					for(int i=0; i<contAluno; i++) {
+						pesquisa = aluno[i].pesquisaNome();
+						
+						if (identificacao.equals(pesquisa)){
+							aluno[i].imprimirPesquisa();
+							aluno[i].imprimirNota();
+						}
 					}
-				}
+					
+					//pesquisa por RA.
+					for(int i=0; i<contAluno; i++) {
+						pesquisa = aluno[i].pesquisaRA();
+						
+						if (identificacao.equals(pesquisa)){
+							aluno[i].imprimirPesquisa();
+							aluno[i].imprimirNota();
+						}
+					}
+					break;
+					
+				case 3://Cadastrar nota da disciplina
+					String nomeProva;
+					System.out.println("Insira o nome da disciplina: ");
+					nomeProva = leia.next();
+					
+					float nota;
+					//Imprimir todos os alunos, e solicitar a nota dos mesmos.
+					for(int i=0; i<contAluno; i++) {
+						
+						aluno[i].imprimirPesquisa();
+						System.out.println("Insira o nota: ");
+						nota = leia.nextFloat();
+						
+						aluno[i].lancarNota(nomeProva, nota);
+					}
+								
+					
+					break;
 			}
 			
 			//cls();
