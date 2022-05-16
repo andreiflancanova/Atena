@@ -197,7 +197,11 @@ public class Principal {
 						System.out.println("");
 					}
 					break;
-					
+				
+				case '0':
+					leia.nextLine();
+					cls();System.out.println("Encerrando...");
+					break;
 				default:
 					leia.nextLine();
 					cls();
@@ -206,7 +210,7 @@ public class Principal {
 					
 			}
 
-		}while(op!=0);
+		}while(op!='0');
 
 	}
 
