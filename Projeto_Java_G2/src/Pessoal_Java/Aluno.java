@@ -28,7 +28,7 @@ public class Aluno {
 
 	public void imprimirNota() {
 		for(int i=0; i<quantidadeProva; i++) {
-			System.out.println("\tdisplicina: "+prova[i][0]+"\t\tnota: "+prova[i][1]);
+			System.out.println("\tdisciplina: "+prova[i][0]+"\t\tnota: "+prova[i][1]);
 			System.out.println("--\n");
 		}
 	}
@@ -43,7 +43,7 @@ public class Aluno {
 			System.out.println("Esse alune não tem nenhuma nota cadastrada!");
 		}
 		for(int i=0; i<quantidadeProva; i++) {
-			System.out.println("Displicina:\t"+prova[i][0]+"\t\tnota: "+prova[i][1]);
+			System.out.println("Disciplina:\t"+prova[i][0]+"\t\tnota: "+prova[i][1]);
 		}
 		System.out.println("--\n");
 	}
