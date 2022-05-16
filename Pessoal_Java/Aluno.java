@@ -4,7 +4,7 @@ public class Aluno {
 	//Atributos
 	private String nomeAluno;
 	private String codigo;
-	private String[][] prova = new String[4][2];
+	private String[][] prova = new String[10][2];
 	private float nota;
 	private int quantidadeProva=0;
 	
@@ -21,14 +21,6 @@ public class Aluno {
 		this.prova[quantidadeProva][1] = String.valueOf(notaProva);		
 		quantidadeProva++;
 	}
-		
-	public String pesquisaNome() {
-		return nomeAluno;		
-	}
-	
-	public String pesquisaRA() {
-		return codigo;		
-	}
 	
 	public void imprimirPesquisa() {
 		System.out.println("Nome do Aluno: "+nomeAluno+"\t\tRA: "+codigo);
@@ -37,11 +29,26 @@ public class Aluno {
 	public void imprimirNota() {
 		for(int i=0; i<quantidadeProva; i++) {
 			System.out.println("\tdisplicina: "+prova[i][0]+"\t\tnota: "+prova[i][1]);
+			System.out.println("--\n");
 		}
 	}
-
-	//get & set
 	
+	public void substituirNota(float notaProva,int indice) {
+		this.prova[indice][1] = String.valueOf(notaProva);
+	}
+	
+	public void todasNotasAluno() {
+		System.out.println("Nome do Aluno: "+nomeAluno+"\t\tRA: "+codigo);
+		if(quantidadeProva == 0) {//caso não tenha nenhuma prova cadastrada
+			System.out.println("%Este aluno não tem nenhuma nota cadastrada!");
+		}
+		for(int i=0; i<quantidadeProva; i++) {
+			System.out.println("Displicina:\t"+prova[i][0]+"\t\tnota: "+prova[i][1]);
+		}
+		System.out.println("--\n");
+	}
+	
+	//get & set
 	public String getNomeAluno() {
 		return nomeAluno;
 	}
