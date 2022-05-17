@@ -23,12 +23,12 @@ public class Aluno {
 	}
 	
 	public void imprimirPesquisa() {
-		System.out.println("Nome do Aluno: "+nomeAluno+"\t\tRA: "+codigo);
+		System.out.println("Nome do Alune: "+nomeAluno+"\t\tRA: "+codigo);
 	}
 
 	public void imprimirNota() {
 		for(int i=0; i<quantidadeProva; i++) {
-			System.out.println("\tdisplicina: "+prova[i][0]+"\t\tnota: "+prova[i][1]);
+			System.out.println("\tdisciplina: "+prova[i][0]+"\t\tnota: "+prova[i][1]);
 			System.out.println("--\n");
 		}
 	}
@@ -38,12 +38,12 @@ public class Aluno {
 	}
 	
 	public void todasNotasAluno() {
-		System.out.println("Nome do Aluno: "+nomeAluno+"\t\tRA: "+codigo);
+		System.out.println("Nome do Alune: "+nomeAluno+"\t\tRA: "+codigo);
 		if(quantidadeProva == 0) {//caso não tenha nenhuma prova cadastrada
-			System.out.println("%Este aluno não tem nenhuma nota cadastrada!");
+			System.out.println("Esse alune não tem nenhuma nota cadastrada!");
 		}
 		for(int i=0; i<quantidadeProva; i++) {
-			System.out.println("Displicina:\t"+prova[i][0]+"\t\tnota: "+prova[i][1]);
+			System.out.println("Disciplina:  "+prova[i][0]+"\t\tnota: "+prova[i][1]);
 		}
 		System.out.println("--\n");
 	}
